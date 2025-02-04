@@ -1,0 +1,56 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    padding: 2rem;
+    background-color: #fff0f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in;
+}
+
+.error-content {
+    text-align: center;
+    max-width: 400px;
+}
+
+.error-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.error-title {
+    color: #dc3545;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.error-message {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.retry-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.retry-button:hover {
+    background-color: #bb2d3b;
+    transform: translateY(-1px);
+}
+
+/* ... rest of your styles ... */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
