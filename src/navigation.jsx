@@ -21,8 +21,8 @@ function RouterNavbar() {
 
                         {/* Dropdown with Router Links */}
                         <NavDropdown title="功能" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/services/web">
-                                Web Development
+                            <NavDropdown.Item as={Link} to="/blogs/create_blog_form">
+                                创建新博客
                             </NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/services/mobile">
                                 Mobile Apps

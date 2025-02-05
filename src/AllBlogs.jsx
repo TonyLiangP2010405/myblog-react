@@ -51,13 +51,34 @@ function AllBlogs () {
 
     return (
         <div className="blog-page">
-            <h1>All Blogs</h1>
-            <div className="blog-list">
+            <header className="blog-header">
+                <h1 className="blog-title">Latest Blog Posts</h1>
+                <div className="header-accent"></div>
+            </header>
+
+            <div className="blog-grid">
                 {blogs.map(blog => (
-                    <div key={blog.id} className="blog-card">
-                        <h2>{blog.title}</h2>
-                        <p>{blog.content}</p>
-                    </div>
+                    <article key={blog.id} className="blog-card">
+                        <div className="card-content">
+                            <div className="card-header">
+                                <h2 className="card-title">{blog.title}</h2>
+                                {blog.date &&
+                                    <time className="card-date">{new Date(blog.date).toLocaleDateString()}</time>}
+                            </div>
+                            <p className="card-excerpt">
+                                {blog.content.length > 150 ?
+                                    `${blog.content.substring(0, 150)}...` :
+                                    blog.content
+                                }
+                            </p>
+                            <div className="card-footer">
+                                <button className="read-more-btn">
+                                    Read More
+                                    <span className="arrow">→</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
                 ))}
             </div>
         </div>

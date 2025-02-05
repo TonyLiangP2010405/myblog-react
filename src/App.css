@@ -1,0 +1,11 @@
+/* App.css */
+.app-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1; /* 确保内容在背景之上 */
+    min-height: 100vh;
+}
