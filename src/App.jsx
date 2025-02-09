@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import AllBlogs from "./AllBlogs.jsx";
 import CreateBlogForm from "./CreateBlogForm.jsx";
 import Background from "./index.jsx";
+import ChangeBlogForm from "./ChangeBlogForm.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <Routes>
                   <Route path="/blogs/get_all_blogs" element={<AllBlogs />} />
                   <Route path="/blogs/create_blog_form" element={<CreateBlogForm />} />
+                  <Route path="/blogs/update_blog/:id" element={<ChangeBlogForm />} />
               </Routes>
           </Router>
           </div>

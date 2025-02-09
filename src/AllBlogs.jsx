@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react";
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 import './AllBlogs.css';
 import {Atom} from "react-loading-indicators";
@@ -7,7 +8,6 @@ function AllBlogs () {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -71,6 +71,14 @@ function AllBlogs () {
                                     blog.content
                                 }
                             </p>
+                            <div className="card-actions">
+                                <Link to={`/blogs/update_blog/${blog.id}/`} className="update-button">
+                                    <button className="btn-primary">
+                                        <i className="fas fa-edit"></i>
+                                        更改内容
+                                    </button>
+                                </Link>
+                            </div>
                             <div className="card-footer">
                                 <button className="read-more-btn">
                                     Read More

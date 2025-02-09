@@ -167,6 +167,30 @@
         font-size: 2rem;
     }
 }
+/* Blog Card Actions */
+.card-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.update-button .btn-primary {
+    background-color: #4CAF50;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.update-button .btn-primary:hover {
+    background-color: #45a049;
+}
+
+.fa-edit {
+    font-size: 0.9rem;
+}
 
 /* ... rest of your styles ... */
 
