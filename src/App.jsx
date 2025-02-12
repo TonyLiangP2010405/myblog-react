@@ -6,6 +6,7 @@ import AllBlogs from "./AllBlogs.jsx";
 import CreateBlogForm from "./CreateBlogForm.jsx";
 import Background from "./index.jsx";
 import ChangeBlogForm from "./ChangeBlogForm.jsx";
+import ShowBlogDetail from "./ShowBlogDetail.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                   <Route path="/blogs/get_all_blogs" element={<AllBlogs />} />
                   <Route path="/blogs/create_blog_form" element={<CreateBlogForm />} />
                   <Route path="/blogs/update_blog/:id" element={<ChangeBlogForm />} />
+                  <Route path="/blogs/get_blog/:id" element={<ShowBlogDetail />} />
               </Routes>
           </Router>
           </div>

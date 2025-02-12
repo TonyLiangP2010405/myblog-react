@@ -81,8 +81,10 @@ function AllBlogs () {
                             </div>
                             <div className="card-footer">
                                 <button className="read-more-btn">
+                                    <Link to={`/blogs/get_blog/${blog.id}`}>
                                     Read More
                                     <span className="arrow">→</span>
+                                    </Link>
                                 </button>
                             </div>
                         </div>

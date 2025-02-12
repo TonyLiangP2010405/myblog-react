@@ -21,7 +21,7 @@ function UpdateBlogForm() {  // 1. More descriptive component name
             try {
                 const response = await axios.get(`http://localhost:3000/blogs/get_blog/${id}`);
                 if (isMounted) {
-                    setBlog(response.data);
+                    setBlog(response.data.data);
                     setLoading(false);
                 }
             } catch (error) {
@@ -58,11 +58,10 @@ function UpdateBlogForm() {  // 1. More descriptive component name
                 `http://localhost:3000/blogs/update_blog/${id}`,
                 blog
             );
-            console.log(response.data)
             if (response.status === 200) {
                 setSuccessMessage('博客更新成功！');
                 // 9. Redirect after success
-                setTimeout(() => navigate(`/blogs/${id}`), 2000);
+                setTimeout(() => navigate(`/blogs/get_blog/${id}`), 2000);
             }
         } catch (error) {
             console.error('提交错误:', error);
