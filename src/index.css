@@ -1,4 +1,4 @@
-/* index.css */
+/* src/components/Background/index.css */
 #global-background {
     position: fixed;
     top: 0;
@@ -36,7 +36,6 @@
     100% { top: 110vh; }
 }
 
-/* 添加柔和的辉光效果 */
 .snowflake::after {
     content: '';
     position: absolute;
