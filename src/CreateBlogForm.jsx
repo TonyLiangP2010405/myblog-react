@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './CreateBlogForm.css';
+import { useNavigate } from 'react-router-dom';
 
 function CreateBlogForm() {
     const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ function CreateBlogForm() {
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -36,15 +38,35 @@ function CreateBlogForm() {
 
         setIsSubmitting(true);
         try {
-            const response = await axios.post('http://localhost:3000/blogs/create_blog', formData);
-            if (response.status === 200) {
-                setSuccessMessage('博客创建成功!');
+            // 添加请求头携带token
+            const token = localStorage.getItem('token');
+            const response = await axios.post(
+                'http://localhost:3000/blogs/create_blog',
+                formData,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+            );
+
+            // 更严谨的成功判断
+            if (response.data && response.data.success) {
+                setSuccessMessage('博客创建成功！');
                 setFormData({ title: '', content: '' });
-                setTimeout(() => setSuccessMessage(''), 3000);
+
+                // 调整跳转逻辑：先显示成功提示再跳转
+                setTimeout(() => {
+                    navigate('/blogs/get_all_blogs'); // 确保跳转到正确的路由
+                }, 1500); // 1.5秒后跳转
             }
         } catch (error) {
             console.error('提交错误:', error);
-            setErrors({ submit: '提交失败，请稍后重试' });
+            // 更详细的错误处理
+            const errorMsg = error.response?.data?.message ||
+                error.message ||
+                '提交失败，请稍后重试';
+            setErrors({ submit: errorMsg });
         } finally {
             setIsSubmitting(false);
         }

@@ -3,11 +3,28 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import './AllBlogs.css';
 import {Atom} from "react-loading-indicators";
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 function AllBlogs () {
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const handleDelete = async (blogId) => {
+        if (!window.confirm('确定要删除这篇博客吗？')) return;
+
+        try {
+            await axios.delete(`http://localhost:3000/blogs/delete_blog/${blogId}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            setBlogs(prev => prev.filter(blog => blog.id !== blogId));
+        } catch (error) {
+            console.error('删除失败:', error);
+            alert('删除失败，请稍后重试');
+        }
+    };
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -72,18 +89,28 @@ function AllBlogs () {
                                 }
                             </p>
                             <div className="card-actions">
-                                <Link to={`/blogs/update_blog/${blog.id}/`} className="update-button">
-                                    <button className="btn-primary">
-                                        <i className="fas fa-edit"></i>
-                                        更改内容
+                                <Link
+                                    to={`/blogs/update_blog/${blog.id}/`}
+                                    className="update-button"
+                                >
+                                    <button className="btn-edit">
+                                        <FaEdit className="icon"/>
+                                        编辑文章
                                     </button>
                                 </Link>
+                                <button
+                                    className="btn-delete"
+                                    onClick={() => handleDelete(blog.id)}
+                                >
+                                    <FaTrash className="icon"/>
+                                    删除文章
+                                </button>
                             </div>
                             <div className="card-footer">
                                 <button className="read-more-btn">
                                     <Link to={`/blogs/get_blog/${blog.id}`}>
-                                    Read More
-                                    <span className="arrow">→</span>
+                                        Read More
+                                        <span className="arrow">→</span>
                                     </Link>
                                 </button>
                             </div>
