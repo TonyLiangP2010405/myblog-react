@@ -52,7 +52,7 @@ function AllBlogs () {
     return (
         <div className="blog-page">
             <header className="blog-header">
-                <h1 className="blog-title">Latest Blog Posts</h1>
+                <h1 className="blog-title">最近动态</h1>
                 <div className="header-accent"></div>
             </header>
 

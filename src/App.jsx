@@ -9,6 +9,8 @@ import ChangeBlogForm from "./ChangeBlogForm.jsx";
 import ShowBlogDetail from "./ShowBlogDetail.jsx";
 import AnimeBlogHome from "./homepage.jsx";
 import RouterFooter from "./footer.jsx";
+import ProfilePage from "./About.jsx";
+import SimpleLogin from "./Login.jsx";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
                   <Route path="/blogs/update_blog/:id" element={<ChangeBlogForm />} />
                   <Route path="/blogs/get_blog/:id" element={<ShowBlogDetail />} />
                   <Route path="/" element={<AnimeBlogHome />} />
+                  <Route path="/login" element={<SimpleLogin />} />
+                  <Route path="/about" element={<ProfilePage />} />
               </Routes>
               <RouterFooter />
           </Router>

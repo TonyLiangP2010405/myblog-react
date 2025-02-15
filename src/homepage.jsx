@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
-import { FaWeibo, FaGamepad, FaHeart } from 'react-icons/fa';
-import { SiBilibili } from 'react-icons/si';
+import {FaGithub, FaHeart, FaLinkedin, FaQq} from 'react-icons/fa';
+
 
 // ======================
 // 动画定义
@@ -137,10 +137,10 @@ const SocialLink = styled(motion.a).attrs(() => ({
 // ======================
 export default function AnimeBlogHome() {
     const stats = [
-        { title: '总游戏时长', value: '1500+小时', color: '#6c5ce7' },
-        { title: '收藏角色', value: '58位', color: '#00b894' },
-        { title: '达成成就', value: '236项', color: '#ff7675' },
-        { title: '好友数量', value: '89位', color: '#fdcb6e' }
+        { title: '后端开发', value: '4年', color: '#6c5ce7' },
+        { title: '专业学习', value: '5年', color: '#00b894' },
+        { title: '独立开发项目', value: '6+项', color: '#ff7675' },
+        { title: '参赛项目', value: '1项', color: '#ff7675' },
     ];
 
     return (
@@ -162,7 +162,7 @@ export default function AnimeBlogHome() {
                         />
                         <Badge>
                             <FaHeart style={{ marginRight: 8 }} />
-                            资深旅行者
+                            资深老宅男
                         </Badge>
                     </AvatarWrapper>
 
@@ -177,7 +177,7 @@ export default function AnimeBlogHome() {
                             }}
                         >
                             <span style={{ color: '#ff7675', marginRight: '10px' }}>✦</span>
-                            星海漫游者
+                            全栈开发爱好者
                             <span style={{ color: '#6c5ce7', marginLeft: '10px' }}>✧</span>
                         </motion.h1>
 
@@ -201,30 +201,30 @@ export default function AnimeBlogHome() {
                 <div className="d-flex justify-content-center mb-4">
                     <SocialLink
                         color="#ff7675"
-                        href="https://www.bilibili.com"
+                        href="https://www.linkedin.com/in/tony-liang-9aaa81279/"
                         target="_blank"
                         whileHover={{ scale: 1.1 }}
                     >
-                        <SiBilibili style={{ fontSize: '1.5rem' }} />
-                        哔哩哔哩
+                        <FaLinkedin style={{ fontSize: '1.5rem' }} />
+                        Linkedin
                     </SocialLink>
                     <SocialLink
                         color="#6c5ce7"
-                        href="https://weibo.com"
+                        href="https://qm.qq.com/q/GQrvhYuj0Y"
                         target="_blank"
                         whileHover={{ scale: 1.1 }}
                     >
-                        <FaWeibo style={{ fontSize: '1.5rem' }} />
-                        微博
+                        <FaQq style={{ fontSize: '1.5rem' }} />
+                        QQ
                     </SocialLink>
                     <SocialLink
                         color="#00b894"
-                        href="https://www.miyoushe.com"
+                        href="https://github.com/TonyLiangP2010405"
                         target="_blank"
                         whileHover={{ scale: 1.1 }}
                     >
-                        <FaGamepad style={{ fontSize: '1.5rem' }} />
-                        米游社
+                        <FaGithub style={{ fontSize: '1.5rem' }} />
+                        Github
                     </SocialLink>
                 </div>
             </MainContent>

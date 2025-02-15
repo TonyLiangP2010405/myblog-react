@@ -1,0 +1,117 @@
+/* ProfilePage.css */
+.profile-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.profile-header {
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.profile-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
+
+.skill-card {
+    transition: transform 0.3s ease;
+    border: none;
+    background: white;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+}
+
+.skill-progress {
+    height: 8px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    background: white;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-tag {
+    display: inline-block;
+    background: #f1f3f5;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 5px 3px;
+    font-size: 0.9em;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -50px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .profile-avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .timeline-icon {
+        left: -30px;
+        width: 30px;
+        height: 30px;
+        font-size: 0.8em;
+    }
+
+    .main-content {
+        padding: 0 15px;
+    }
+}
